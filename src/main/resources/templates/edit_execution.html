@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Выполнение работ</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Выполнение работ</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/executions}">Выполнение работ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/works}">Лабораторные работы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/students}">Студенты</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+<div class = "container">
+    <div class = "row">
+        <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class = "text-center"> Карточка выполнения работ</h1>
+            <div class = "card-body">
+                <form th:action="@{/executions/{id} (id=${execution.id})}" th:object = "${execution}" method="POST">
+                    <div class ="form-group">
+                        <label> Статус </label>
+                        <input
+                                type = "text"
+                                name = "status"
+                                th:field = "*{status}"
+                                class = "form-control"
+                                placeholder="Выполнена"
+                        />
+                    </div>
+                    <div class ="form-group">
+                        <label> Лабораторная работа </label>
+                        <select name="work" class="form-control" >
+                            <option th:each="work:${works}" th:value="${work.id}" th:text="${work.name}" th:selected="${work.id == execution.work.id}"></option>
+                        </select>
+                    </div>
+					<div class ="form-group">
+                        <label> Студент</label>
+                        <select name="student" class="form-control" >
+                            <option th:each="student:${students}" th:value="${student.id}" th:text="${student.lastName}" th:selected="${student.id == execution.student.id}"></option>
+                        </select>
+                    </div>
+                    <div class = "box-footer">
+                        <button type="submit" class = "btn btn-primary">
+                            Внести изменения
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
