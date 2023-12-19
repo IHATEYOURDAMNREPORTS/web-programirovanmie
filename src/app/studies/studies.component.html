@@ -1,0 +1,15 @@
+<ul class="studies">
+  <li *ngFor="let study of studies">
+    <div class="crd">
+      <div class="lbl">ID</div>
+      <div class="vl">{{study.id}}</div>
+      <div class="lbl">Название</div>
+      <div class="vl">{{study.name}}</div>
+      <div class="lbl">Просрочена лицензия?</div>
+      <div class="vl">{{study.suspend_license_terms}}</div>
+      <div class="lbl">Сенсоры</div>
+      <div class="vl">{{study.sensor_type_ids}}</div>
+    </div>
+  </li>
+</ul>
+<!-- <a routerLink="/detail/{{study.id}}"></a> -->

@@ -1,0 +1,79 @@
+/* HeroesComponent's private CSS styles */
+.studies {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 500px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+.studies li {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.studies li:hover {
+  left: .1em;
+}
+
+.vl {
+  font-size: 14px;
+  color:#390bb6;
+  margin-bottom: 3px;
+}
+.lbl {
+  font-size: 18px;
+  font-weight: 300;
+  color:#553c9a;
+}
+.crd {
+  width: 300px;
+  box-shadow: 10px 5px 5px lightblue;
+  border-radius: 5%;
+  padding: 20px;
+}
+
+.studies a {
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+
+.studies a:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+}
+
+.studies a:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.studies .badge {
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
